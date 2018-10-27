@@ -113,7 +113,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener("keydown", this.onKeyDown.bind(this), true);
     window.addEventListener("keyup", this.onKeyUp.bind(this), true);
-    window.serverAddress = process.env.REACT_APP_SOCKETIO_URL || window.location.origin
+    window.serverAddress = process.env.REACT_APP_SOCKETIO_URL || window.location.origin;
     window.reloadFn = this.componentDidMount;
     let socket = io.connect(window.serverAddress);
     socket.on('connect', function(m) {
