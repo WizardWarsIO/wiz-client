@@ -1,0 +1,381 @@
+.App {
+  text-align: center;
+  display: block;
+  background-color: "#333333";
+  color: "#FFFFFF";
+  overflow: hidden;
+  /*border-style: solid;
+  border-color: 'white';
+  border-width: 1px;*/
+}
+
+a {
+  color: white;
+}
+
+#container {
+  display: grid;
+  grid-template-rows: 10vh 85vh 4vh;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  justify-content: left;
+}
+
+#leftpanel {
+  display: grid;
+  grid-template-rows: 37.5vh 37.5vh;
+}
+
+#rightpanel {
+  display: grid;
+  grid-template-rows: 75vh;
+}
+
+#centerpanel {
+  display: grid;
+  grid-template-rows: 75vh;
+}
+
+#sidepanel {
+  display: grid;
+  grid-template-rows: 20% 60% 20%;
+}
+
+#movepanel {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.map {
+  background-color: "#333333";
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(21, 3.3vh);
+  grid-template-rows: repeat(22, 3.3vh);
+
+  /*border-style: solid;
+  border-color: 'white';
+  border-width: 1px;*/
+}
+
+.inv {
+  font-family: "Courier New";
+  display: grid;
+  text-align: left;
+  justify-content: left;
+  /*align-content: center;*/
+  grid-template-columns: repeat(9, 11.111111vw);
+  grid-template-rows: 10vh;
+  /*border-style: solid;
+  border-color: 'white';
+  border-width: 1px;*/
+}
+
+.leaderboard {
+  margin-top: 10vh;
+  /*border-style: solid;
+  border-color: 'white';
+  border-width: 1px;*/
+  border-bottom: 0px;
+  font-family: "Courier New";
+  font-size: 2vh;
+  justify-content: left;
+  text-anchor: left;
+}
+
+#equipment-title {
+  margin-left: 8vh;
+  text-align: right;
+}
+
+.leader-table-header1 {
+  width: 0%
+}
+
+.leader-table-header2 {
+  width: 80%
+}
+
+.leader-table-header3 {
+  width: 20%
+}
+
+#equipment-container {
+  margin-top: -0.96vh;
+  display: grid;
+  text-align: left;
+  text-anchor: left;
+  grid-template-rows: 25% 50%;
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 1vw;
+  border-top: 0;
+  /*border-style: solid;
+  border-color: 'white';
+  border-width: 1px;*/
+}
+
+#equipment {
+  font-weight: ;
+  border-width: 1px;
+  display: grid;
+  margin-left: 8vh;
+  grid-template-columns: 25% 25% 25% 25%;
+  font-family: "Courier New";
+  font-size: 1vw;
+  text-align: left;
+}
+
+#eq-col-1 {
+  display: grid;
+  grid-template-rows: repeat(4, 8vh);
+}
+
+#eq-col-2 {
+  display: grid;
+  grid-template-rows: repeat(4, 8vh);
+}
+
+.eq-left {
+  display: grid;
+  grid-template-rows: 60% 40%;
+}
+
+.eq-right {
+  display: grid;
+}
+
+#input-panel {
+  font-family: "Courier New";
+  font-size: 2vh;
+  display: grid;
+  grid-template-rows: 5.5vh 3vh 2vh;
+}
+
+#invcontainer {
+  display: grid;
+  grid-template-columns: 100%;
+  font-family: "Courier New";
+  font-size: 1vw;
+  background-color: black;
+}
+
+.empty-inv-item {
+  background-color: #000000;
+  font-family: "Courier New";
+  font-size: 12px;
+  display: grid;
+  grid-template-rows: 33% 33% 33%;
+}
+
+.inv-item {
+  background-color: black;
+  font-family: "Courier New";
+  font-size: 1vw;
+  font-weight: bold;
+  overflow: hidden; 
+  display: grid;
+  grid-template-rows: 60% 20% 20%;
+  /*border: 1px;
+  border-color: white;
+
+  border-style: solid;
+  border-color: 'white';
+  border-width: 1px;*/
+}
+/*
+.inv-top {
+  height: 20vh;
+}*/
+
+.inv-num {
+  text-align: center;
+  font-size: 1vw;
+  height: 1vh;
+}
+
+.highlight {
+  background-color: #b3b3b3;
+  color: 'black';
+}
+/*
+.selected {
+  border-style: solid;
+  border-color: 'red';
+  border-width: 3px;
+}*/
+
+#active-container {
+  background: black;
+  display: grid;
+  /*border-top: 1px;*/
+  /*border-style: solid;
+  border-color: 'white';*/
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  font-family: "Courier New";
+}
+
+.active-item {
+  display: grid;
+  grid-template-rows: 5.5vh 1.5vh 1.5vh;
+}
+
+.active-item-header {
+  margin-top: 1.5vh;
+  font-size: 2vh;
+}
+
+.active-item-name {
+  font-size: 1.8vh;
+  vertical-align: middle;
+}
+
+.win-item {
+  margin-top: 1vh;
+  vertical-align: middle;
+  background-color: #0f0f0f;
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.log1 {
+  color: #ffffff;
+}
+
+.log2 {
+  color: #e6e6e6;
+}
+
+.log3 {
+  color: #cccccc;
+}
+
+.log4 {
+  color: #b3b3b3;
+}
+
+.log5 {
+  color: #999999;
+}
+
+.log6 {
+  color: #808080;
+}
+
+.log7 {
+  color: #666666;
+}
+
+.log8 {
+  color: #4d4d4d;
+}
+
+.log9 {
+  color: #333333;
+}
+
+.log10 {
+  color: #1a1a1a;
+}
+
+.log-item {
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 2vh;
+}
+
+.win-item {
+  font-family: "Courier New";
+  background-color: #000000;
+}
+
+.title-screen {
+  background-color: "#333333";
+  font-family: "Courier New";
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  grid-column-gap: 0;
+}
+
+.event-log {
+  min-height: 20vh;
+}
+
+.logs {
+ margin-top: 10vh;
+ text-align: left;
+ justify-content: left;
+ align-content: left;
+ display: grid;
+ overflow: hidden;
+ /*border-style: solid;
+ border-color: 'white';
+ border-width: 1px;*/
+}
+
+input {
+  font-family: "Courier New";
+}
+
+.map-tile {
+  text-align: center;
+  font-size: 3.3vh;
+  font-family: "Courier New";
+  text-align: center;
+  padding-bottom: 66.66%
+  /*line-height: 20vh;*/
+  /*margin: 0 auto;*/
+}
+
+.info {
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 3vh;/*18px;*/
+  padding: 50px 0;
+}
+
+.compass {
+  font-family: "Courier New";
+  font-size: 5vh;
+}
+
+.inv-tile {
+  text-align: center;
+  font-size: 4.6vh;
+  font-family: "Courier New";
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 20vh;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
