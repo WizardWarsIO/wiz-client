@@ -312,7 +312,7 @@ class App extends Component {
   }
 
   render() {
-    const { player, status, winner, killedBy } = this.state
+    const { player, winner, killedBy } = this.state
     if (!player.active) {
       return (
         <TitleScreen
