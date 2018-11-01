@@ -6,7 +6,7 @@ class Leaderboard extends Component {
     let items = this.props && this.props.items ? this.props.items : [{},{},{},{},{}];
 
     items = [1,2,3,4,5].map((num, i) => {
-      return <LBItem key={i} data={items[i]} num={num}/>
+      return <LBItem key={i} {...items[i]} num={num}/>
     });
 
     return <div className="leaderboard">

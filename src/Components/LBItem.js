@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
-class LBItem extends Component {
-  render() {
-    let num = this.props.num;
-    let data = this.props.data ? this.props.data : {name: "", score: ""};
+const LBItem = ({ num, name = '', score = null }) => (
+  <tr className='lb-item'>
+    <td></td>
+    <td>{num + ')' + name}</td>
+    <td align='right'>
+      {'<'}
+      {score}
+      {'>'}
+    </td>
+  </tr>
+)
 
-    return(
-    <tr className="lb-item">
-         <td></td>
-         <td>{'' + num + ')' + data.name}</td>
-         <td align="right">{'<' + data.score + '>'}</td>
-    </tr>
-    )
-  }
+LBItem.propTypes = {
+  num: PropTypes.number.isRequired,
+  name: PropTypes.string,
+  score: PropTypes.number
 }
 
 export default LBItem;
