@@ -1,15 +1,11 @@
-import Leaderboard from './Leaderboard';
-
 import React, { Component } from 'react';
 
-class LBPanel extends Component {
-  render() {
-  let data = this.props.items;
+import Leaderboard from './Leaderboard';
 
-   return <div className="lb" align = "center">
-    <Leaderboard items={data}/>
-   </div>
-  }
-}
+const LBPanel = ({ items }) => (
+  <div className='lb' align='center'>
+    <Leaderboard items={items} />
+  </div>
+)
 
 export default LBPanel;
