@@ -24,7 +24,7 @@ class Log extends Component {
           newlogs.push(' ');
         }
       }
-      return { logs: newLogs }
+      return { logs: newlogs }
     })
   }
 
