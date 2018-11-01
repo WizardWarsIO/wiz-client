@@ -260,7 +260,7 @@ class App extends Component {
             this.arrowsDown[keyCode] = true;
             if (prev === false) {
               let dir = this.updateArrowInput();
-              newInput = {dir: dir, type: this.state.input.type, num: this.state.input.num};  
+              newInput = {dir: dir, type: this.state.input.type, num: this.state.input.num};
               this.setState({input: newInput});
               this.sendIntent();
               return false;
@@ -312,24 +312,15 @@ class App extends Component {
   }
 
   render() {
-    if (!this.state.player.active) {
-        if (this.state.status === 'finished') {
-            let winner = this.state.winner;
-            if (winner) {
-              return(
-                <TitleScreen winner={winner} startgame={this.joinGame.bind(this)}/>  
-              )    
-            }
-
-          let killedBy = this.state.killedBy;
-          return(
-            <TitleScreen killedBy={killedBy} startgame={this.joinGame.bind(this)}/>  
-          )
-   } else {
-        return(
-          <TitleScreen startgame={this.joinGame.bind(this)}/>
-        )
-      }
+    const { player, status, winner, killedBy } = this.state
+    if (!player.active) {
+      return (
+        <TitleScreen
+          winner={winner}
+          killedBy={killedBy}
+          startgame={this.joinGame.bind(this)}
+        />
+      )
     }
 
     let inv = [];

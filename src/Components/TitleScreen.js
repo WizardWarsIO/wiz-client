@@ -36,10 +36,10 @@ class TitleScreen extends Component {
 
     // gameover message
     let message = null
-    if (killedBy) {
-      message = "Killed by: " + killedBy;
-    } else if (winner) {
+    if (winner) {
       message = winner + " is the Winning Wizard!";
+    } else if (killedBy) {
+      message = "Killed by: " + killedBy;
     }
 
     return (
