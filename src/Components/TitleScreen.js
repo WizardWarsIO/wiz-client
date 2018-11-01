@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types'
 
 class TitleScreen extends Component {
@@ -8,40 +8,47 @@ class TitleScreen extends Component {
     killedBy: PropTypes.string
   }
 
-  startgame(e){
+  inputRef = createRef()
+  state = {
+    playerName: ''
+  }
+
+  handleChange = e => this.setState({ playerName: e.currentTarget.value })
+
+  startgame = e => {
     e.preventDefault();
-    let div = document.getElementById('name');
-    let chosenName = div.value;
-    if (chosenName && chosenName.length > 0) {
-      this.props.startgame(chosenName);
+    const { playerName } = this.state
+    if (playerName && playerName.length > 0) {
+      this.props.startgame(playerName);
     } else {
       alert("Pick a name, Dingus.");
-      div.value = "Dingus";
+      this.setState({ playerName: 'Dingus' })
     }
-
-    return false;
   }
 
   componentDidMount() {
-    let nameField = document.getElementById('name');
-    nameField.focus();
+    this.inputRef.current.focus()
   }
 
   render() {
     const { killedBy, winner } = this.props
+    const { playerName } = this.state
+
+    // gameover message
     let message = null
     if (killedBy) {
       message = "Killed by: " + killedBy;
     } else if (winner) {
       message = winner + " is the Winning Wizard!";
     }
+
     return (
       <div className = 'title-screen' style={{backgroundColor: "#000000", color:"#FFFFFF"}}>
         <h1>WizardWars.io</h1>
         <h3>A Roguelike Deathmatch</h3>
         <div>{message}</div>
-        <form onSubmit={this.startgame.bind(this)}> <br/>
-          <input id='name'></input>
+        <form onSubmit={this.startgame}> <br/>
+          <input value={playerName} onChange={this.handleChange} ref={this.inputRef} />
           <br/>
           <input type="submit" value="Join Game"/>
         </form>
