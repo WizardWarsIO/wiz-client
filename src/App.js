@@ -113,7 +113,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener("keydown", this.onKeyDown.bind(this), true);
     window.addEventListener("keyup", this.onKeyUp.bind(this), true);
-    window.serverAddress = 'http://206.189.227.251:8000/';
+    window.serverAddress = window.location.origin;
     window.reloadFn = this.componentDidMount;
     let socket = io.connect(window.serverAddress);
     socket.on('connect', function(m) {
@@ -260,7 +260,7 @@ class App extends Component {
             this.arrowsDown[keyCode] = true;
             if (prev === false) {
               let dir = this.updateArrowInput();
-              newInput = {dir: dir, type: this.state.input.type, num: this.state.input.num};  
+              newInput = {dir: dir, type: this.state.input.type, num: this.state.input.num};
               this.setState({input: newInput});
               this.sendIntent();
               return false;
@@ -317,13 +317,13 @@ class App extends Component {
             let winner = this.state.winner;
             if (winner) {
               return(
-                <TitleScreen winner={winner} startgame={this.joinGame.bind(this)}/>  
-              )    
+                <TitleScreen winner={winner} startgame={this.joinGame.bind(this)}/>
+              )
             }
 
           let killedBy = this.state.killedBy;
           return(
-            <TitleScreen killedBy={killedBy} startgame={this.joinGame.bind(this)}/>  
+            <TitleScreen killedBy={killedBy} startgame={this.joinGame.bind(this)}/>
           )
    } else {
         return(
