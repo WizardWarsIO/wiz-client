@@ -113,7 +113,7 @@ class App extends Component {
   componentDidMount() {
     window.addEventListener("keydown", this.onKeyDown.bind(this), true);
     window.addEventListener("keyup", this.onKeyUp.bind(this), true);
-    window.serverAddress = 'http://206.189.227.251:8000/';
+    window.serverAddress = window.location.origin;
     window.reloadFn = this.componentDidMount;
     let socket = io.connect(window.serverAddress);
     socket.on('connect', function(m) {

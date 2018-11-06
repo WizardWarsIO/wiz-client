@@ -8,7 +8,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4",
-    "socket.io-client": "^2.1.1"
+    "socket.io-client": "^2.1.1",
+    "prop-types": "^15.6.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,7 +17,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "devDependencies": {
-    "prop-types": "^15.6.2"
-  }
+  "proxy": "http://localhost:8000/"
 }
