@@ -3,38 +3,42 @@ import LogItem from './LogItem';
 import Pubsub from 'pubsub-js';
 
 class Log extends Component {
+
+  state = {
+    logs: null
+  }
+
   componentDidMount(){
-    Pubsub.subscribe('logs', this.addLog.bind(this));
+    Pubsub.subscribe('logs', this.addLog);
     this.setState({logs: [' ', ' ', ' ', 'Welcome to Wizard Wars']});
   }
-  addLog(t, logs) {
-    let newlogs = this.state.logs.concat(logs);
-    let total = newlogs.length;
-    if (total > 10) {
-      newlogs = newlogs.splice(total - 10, 10);
-    } else {
-      while (newlogs.length < 10) {
-        newlogs.push(' ');
+
+  addLog = (t, logs) => {
+    this.setState(previous => {
+      let newlogs = previous.logs.concat(logs);
+      let total = newlogs.length;
+      if (total > 10) {
+        newlogs = newlogs.splice(total - 10, 10);
+      } else {
+        while (newlogs.length < 10) {
+          newlogs.push(' ');
+        }
       }
-    }
-    this.setState({logs: newlogs});
+      return { logs: newlogs }
+    })
   }
+
   render() {
-    let msgs = this.state ? this.state.logs : null;
-    if (!msgs) {
-      return <div></div>
-    }
+    const { logs } = this.state
 
-    let rev = msgs.reduce((ary, ele) => {ary.unshift(ele); return ary}, []);
-    let elems = rev.map((data, i) => {
-        return (
-          <LogItem key={i} lognum={i + 1} data={"> " + data}/>
-        );
-      });
+    return logs && (
+      <div className='logs'>
+        {logs.slice().reverse().map((message, i) =>
+          <LogItem key={i} lognum={i+1} data={'> ' + message} />
+        )}
+      </div>
+    )
 
-    return <div className="logs">
-      {elems}
-    </div>
   }
 }
 
